@@ -1,0 +1,11 @@
+{
+    "git.defaultCloneDirectory": "",
+    "emmet.excludeLanguages": [
+
+        "markdown"
+    ],
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact" 
+    
+    }
+}
