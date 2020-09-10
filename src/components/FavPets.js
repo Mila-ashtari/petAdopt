@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 
 class FavPetList extends Component{
@@ -29,11 +29,10 @@ class FavPetList extends Component{
             <button onClick={this.handleClick} className='favourites'><span>&#9829;</span> favourites <span>&#9829;</span></button>
             {this.state.showFavourites ? 
                 <section className="pets favourites">
-                    {this.props.favPetList.length!=0 ? this.props.favPetList.map(({key, petData})=>{ 
+                    {this.props.favPetList.length!==0 ? this.props.favPetList.map(({key, petData})=>{ 
                         return(
                         <div key={key} className="petContainer">
-                            <button className="cross" data-key={key} data-pet-name={petData.petName} data-pet-url={petData.petUrl} data-pet-age={petData.petAge} data-pet-status={petData.petStatus} data-pet-photo={petData.petPhoto}  data-pet-id={petData.petId} onClick={(e)=>{console.log(e.target.dataset)
-                            this.props.clickCrossButton(e.target.dataset)}}>&#9747;</button>
+                            <button className="cross" data-key={key} data-pet-name={petData.petName} data-pet-url={petData.petUrl} data-pet-age={petData.petAge} data-pet-status={petData.petStatus} data-pet-photo={petData.petPhoto}  data-pet-id={petData.petId} onClick={(e)=>{this.props.clickCrossButton(e.target.dataset)}}>&#9747;</button>
                             <img src={petData.petPhoto} alt=""/>
                             <div className="petInfo">
                                 <p className="name" style={{ fontFamily: 'Indie Flower' }}><span>Name: </span>{petData.petName}</p>

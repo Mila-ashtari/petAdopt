@@ -8,7 +8,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faDog, faCat, faDove, faHeart ,faSearch} from '@fortawesome/free-solid-svg-icons'
 import firebase from './firebase';
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link } from "react-scroll";
  
 library.add(fab, faDog, faCat, faDog, faDove, faHeart, faSearch) 
 
