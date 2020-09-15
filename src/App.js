@@ -29,85 +29,87 @@ class App extends React.Component{
         for(let key in responseObj){
           newFavPetList.push({key:key, petData:responseObj[key]})
         }
-        this.setState({
-        favPetList:newFavPetList,
-      })
+        this.setState(
+          {favPetList:newFavPetList})
+      
       })
   }
   // getting animal info with an axios call 
-async getPet(inputObj){
-    const axios = require('axios');
-    const oauth = require('axios-oauth-client');
-    const getClientCredentials = oauth.client(axios.create(), {
-    url: 'https://api.petfinder.com/v2/oauth2/token',
-    grant_type: 'client_credentials',
-    client_id: 'ekGvHgiY5LvPGX6SYZLpLAax3umf2Q1GxBAuHoRCgpJZ6Aj19e',
-    client_secret: 'Dsd5eqTmjNDVo31SDuKICTeZfxZP7rfsoGorHOyw',
-})
-const auth = await getClientCredentials();
-// construct param object with non empty key value pair
-const paramObj={}
-for(let key in inputObj){
-    
-  if(inputObj[key] !== ""){
-      paramObj[key]=inputObj[key]
-  }
-
-}  
-axios({
-  method:'GET',                                                       
-  url:'https://api.petfinder.com/v2/animals',
-  headers:{
-    Authorization: `Bearer ${auth.access_token}`,
-  },
-  dataType:'jsonp',
-  params:paramObj
-}).then((result)=>{
-  const newPetList=[]
-  result.data.animals.forEach(function(animal){
-    if (animal.photos.length!== 0){
-      newPetList.push({
-        petPhoto:animal.photos[0].medium,
-        petName:animal.name,
-        petUrl:animal.url,
-        petStatus:animal.status,
-        petId:animal.id,
-        petAge:animal.age
+  async getPet(inputObj){
+      const axios = require('axios');
+      const oauth = require('axios-oauth-client');
+      const getClientCredentials = oauth.client(axios.create(), {
+      url: 'https://api.petfinder.com/v2/oauth2/token',
+      grant_type: 'client_credentials',
+      client_id: 'ekGvHgiY5LvPGX6SYZLpLAax3umf2Q1GxBAuHoRCgpJZ6Aj19e',
+      client_secret: 'Dsd5eqTmjNDVo31SDuKICTeZfxZP7rfsoGorHOyw',
       })
-    }
-  })
-  this.setState({
-    petList:newPetList
-  })
-})
-}
-handleSubmit=(type, location)=>{
-  // get pets data with user selection
-  const selectionObj={
-    type: type,
-    location:location,
+      const auth = await getClientCredentials();
+      // construct param object with non empty key value pair
+      const paramObj={}
+      for(let key in inputObj){
+          
+        if(inputObj[key] !== ""){
+            paramObj[key]=inputObj[key]
+        }
+
+      }  
+      axios({
+        method:'GET',                                                       
+        url:'https://api.petfinder.com/v2/animals',
+        headers:{
+          Authorization: `Bearer ${auth.access_token}`,
+        },
+        dataType:'jsonp',
+        params:paramObj
+      }).then((result)=>{
+        const newPetList=[]
+        result.data.animals.forEach(function(animal){
+          if (animal.photos.length!== 0){
+            newPetList.push({
+              petPhoto:animal.photos[0].medium,
+              petName:animal.name,
+              petUrl:animal.url,
+              petStatus:animal.status,
+              petId:animal.id,
+              petAge:animal.age,
+              buttonDisable:false
+            })
+          }
+        })
+        this.setState({
+          petList:newPetList
+        })
+      })
   }
-  this.getPet(selectionObj)
-}
-handlePetsClick=({petAge, petId, petName, petPhoto, petStatus, petUrl})=>{
- if(this.state.favPetList.length<5){
+  handleSubmit=(type, location)=>{
+    // get pets data with user selection
+    const selectionObj={
+      type: type,
+      location:location,
+    }
+    this.getPet(selectionObj)
+  }
+  handlePetsClick=({petAge, petId, petName, petPhoto, petStatus, petUrl})=>{
+  if(this.state.favPetList.length<5){
+      const dbRef = firebase.database().ref();
+      dbRef.push({
+        petName:petName,
+        petAge:petAge,
+        petUrl:petUrl,
+        petStatus:petStatus,
+        petPhoto:petPhoto,
+        petId:petId
+    })
+  }
+  else{
+    alert('you have added five favourites to your list')
+  }
+  }
+  handleFavPetsClick=({key})=>{
     const dbRef = firebase.database().ref();
-    dbRef.push({
-      petName:petName,
-      petAge:petAge,
-      petUrl:petUrl,
-      petStatus:petStatus,
-      petPhoto:petPhoto,
-      petId:petId
-  })
-}
-else{
-  alert('you have added five favourites to your list')
-}}
-handleFavPetsClick=({key})=>{
-  const dbRef = firebase.database().ref();
-  dbRef.child(key).remove();
-}
+    dbRef.child(key).remove();
+  }
 
  render(){
 
@@ -132,7 +134,7 @@ handleFavPetsClick=({key})=>{
         <main className="wrapper">
           <UserSelection submitForm={this.handleSubmit}></UserSelection>
           <FavPets favPetList={this.state.favPetList} clickCrossButton={this.handleFavPetsClick}></FavPets>
-          <Pets petList={this.state.petList}  favPetList={this.state.favPetList} clickFavButton={this.handlePetsClick}></Pets>
+          <Pets petList={this.state.petList} favPetList={this.state.favPetList} clickFavButton={this.handlePetsClick}></Pets>
         </main>
       </Fragment>
    )

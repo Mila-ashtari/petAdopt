@@ -15,29 +15,18 @@ class Pets extends Component {
         let disable=false
         this.props.favPetList.forEach((favPet)=>{
             if(favPet.petData.petId==petId){
+                console.log(petId)
                 disable=true
-            }
-            else { 
-                disable=false
             }
         })
         return disable
-        // if(petAge=="Adult"){
-        // return true}
-        // else{
-        //     return false
-        // }
-
-        
     }
-
     render(){
-        console.log('rendred')
         return(
         <Fragment>
-        {this.props.petList.length!==0 ? <p  className="searchResults"><FontAwesomeIcon className='icon' icon='search'></FontAwesomeIcon> Search Results</p> : <p></p>}
+            {this.props.petList.length!==0 ? <p  className="searchResults"><FontAwesomeIcon className='icon' icon='search'></FontAwesomeIcon> Search Results</p> : <p></p>}
             <section className="pets searchResults" id="searchResults">
-            {this.props.petList.map((pet)=>{ 
+            {this.props.petList.map((pet)=>{
                 return(
                     <div key={pet.key} className="petContainer">
                         <img src={pet.petPhoto} alt=""/>
@@ -53,7 +42,7 @@ class Pets extends Component {
             })
             }      
             </section>       
-    </Fragment>
+        </Fragment>
              
         )}
 }
