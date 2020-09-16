@@ -23,7 +23,7 @@ class Pets extends Component {
         let color={color: "black"}
         this.props.favPetList.forEach((favPet)=>{
             if(favPet.petData.petId==petId){
-                color={color: "red"}
+                color={color: "#ec3b2e81"}
             }
         })
         console.log(color)
