@@ -73,7 +73,6 @@ class App extends React.Component{
               petStatus:animal.status,
               petId:animal.id,
               petAge:animal.age,
-              buttonDisable:false
             })
           }
         })
