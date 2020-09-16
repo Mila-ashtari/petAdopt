@@ -26,7 +26,7 @@ class FavPetList extends Component{
     render(){
     return(
         <section>
-            <button onClick={this.handleClick} className='favourites'><span>&#9829;</span> favourites <span>&#9829;</span></button>
+            <button onClick={this.handleClick} className='favourites'><span>&#9829;</span> favourites </button>
             {this.state.showFavourites ? 
                 <section className="pets favourites">
                     {this.props.favPetList.length!==0 ? this.props.favPetList.map(({key, petData})=>{ 
@@ -38,9 +38,9 @@ class FavPetList extends Component{
                                 <p className="name" style={{ fontFamily: 'Indie Flower' }}><span>Name: </span>{petData.petName}</p>
                                 <p className="age" style={{ fontFamily: 'Indie Flower' }}><span>Age: </span>{petData.petAge}</p>
                                 <p className="status" style={{ fontFamily: 'Indie Flower' }}><span>Status: </span>{petData.petStatus}</p>
-                                <p><a href={petData.petUrl} style={{ fontFamily: 'Indie Flower' }}>more info</a></p>
+                                <p><a href={petData.petUrl} style={{ fontFamily: 'Indie Flower' }} target="_blank">more info</a></p>
                             </div>
-                            <button type="button" className="favButton" style={{'color':'red'}}>&#9829;</button>
+                            <button type="button" className="favButton" style={{color:'red'}}>&#9829;</button>
                         </div>
                         )
                 }): <p className='noFavs'>you have no favourites</p>}              
