@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/shopifyInternChallenge/static/css/main.0fff0e35.chunk.css",
+    "main.css": "/shopifyInternChallenge/static/css/main.8d046e9a.chunk.css",
     "main.js": "/shopifyInternChallenge/static/js/main.c0ced3d7.chunk.js",
     "main.js.map": "/shopifyInternChallenge/static/js/main.c0ced3d7.chunk.js.map",
     "runtime-main.js": "/shopifyInternChallenge/static/js/runtime-main.99e28639.js",
@@ -8,16 +8,16 @@
     "static/js/2.6123b23b.chunk.js": "/shopifyInternChallenge/static/js/2.6123b23b.chunk.js",
     "static/js/2.6123b23b.chunk.js.map": "/shopifyInternChallenge/static/js/2.6123b23b.chunk.js.map",
     "index.html": "/shopifyInternChallenge/index.html",
-    "precache-manifest.3da342961347500e29cdee37f9749b76.js": "/shopifyInternChallenge/precache-manifest.3da342961347500e29cdee37f9749b76.js",
+    "precache-manifest.b162274e4d6a5055c84aabf0dd797ddb.js": "/shopifyInternChallenge/precache-manifest.b162274e4d6a5055c84aabf0dd797ddb.js",
     "service-worker.js": "/shopifyInternChallenge/service-worker.js",
-    "static/css/main.0fff0e35.chunk.css.map": "/shopifyInternChallenge/static/css/main.0fff0e35.chunk.css.map",
+    "static/css/main.8d046e9a.chunk.css.map": "/shopifyInternChallenge/static/css/main.8d046e9a.chunk.css.map",
     "static/js/2.6123b23b.chunk.js.LICENSE.txt": "/shopifyInternChallenge/static/js/2.6123b23b.chunk.js.LICENSE.txt",
     "static/media/petLandingPage.png": "/shopifyInternChallenge/static/media/petLandingPage.ad797d35.png"
   },
   "entrypoints": [
     "static/js/runtime-main.99e28639.js",
     "static/js/2.6123b23b.chunk.js",
-    "static/css/main.0fff0e35.chunk.css",
+    "static/css/main.8d046e9a.chunk.css",
     "static/js/main.c0ced3d7.chunk.js"
   ]
 }
