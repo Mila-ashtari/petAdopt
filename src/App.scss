@@ -49,6 +49,9 @@ header button{
   padding: 10px 20px;
   border: #a276e7 solid 1px;
   border-radius: 40px;
+  &:hover{
+    background-color:#874ee48e ;
+  }
 }
 header button a{
   text-decoration: none;
@@ -88,7 +91,7 @@ form fieldset button{
       padding: 5px;
       border: solid 1px grey;
       &:hover{
-        background-color: #9969e638;
+        background-color: #9969e6d2;
       }
     }
   }
@@ -111,6 +114,9 @@ form button{
   padding: 10px;
   background-color:#35e5b4 ;
   border:#35e5b4;
+  &:hover{
+    background-color:#35e5b3c4;
+  }
   
 }
 form button a{
@@ -131,8 +137,14 @@ button.favourites{
   border: none;
   color: #fc751b;
   font-size: 20px;
+  &:hover{
+    color:#fc751bc0 ;
+  }
   span{
     color:  #fc751b;
+    &:hover{
+      color:#fc751bc0 ;
+    }
   }
 }
 .pets.favourites{

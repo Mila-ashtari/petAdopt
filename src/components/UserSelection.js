@@ -79,7 +79,7 @@ class UserSlection extends React.Component{
                     {/* location input field */}
                     <div className="location">
                         <label htmlFor="locationInput">location</label>
-                        <input type="text" name="location" id="locationInput"  onChange={this.handleChnage} 
+                        <input type="text" name="location" id="locationInput" required={true} onChange={this.handleChnage} 
                         value={this.state.location}/>
                         <ul>
                             {/* displays suggested areas based from searchAhead API call*/}
