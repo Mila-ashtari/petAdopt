@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 class FavPetList extends Component{
@@ -26,7 +26,7 @@ class FavPetList extends Component{
     render(){
     return(
         <section>
-            <button onClick={this.handleClick} className='favourites'><span>&#9829;</span> favourites </button>
+            <FontAwesomeIcon className="icon favourites" icon="heart"></FontAwesomeIcon> <button onClick={this.handleClick} className='favourites'> Favourites </button><FontAwesomeIcon className="icon angle" icon={this.state.showFavourites ? "angle-down" : "angle-up"}></FontAwesomeIcon> 
             {this.state.showFavourites ? 
                 <section className="pets favourites">
                     {this.props.favPetList.length!==0 ? this.props.favPetList.map(({key, petData})=>{ 

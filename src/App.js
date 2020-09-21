@@ -6,11 +6,11 @@ import FavPets from './components/FavPets'
 import petLandingPage from './assets/petLandingPage.png'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
-import { faDog, faCat, faDove, faHeart ,faSearch} from '@fortawesome/free-solid-svg-icons'
+import { faDog, faCat, faDove, faHeart ,faSearch,faAngleDown, faAngleUp} from '@fortawesome/free-solid-svg-icons'
 import firebase from './firebase';
 import { Link } from "react-scroll";
  
-library.add(fab, faDog, faCat, faDog, faDove, faHeart, faSearch) 
+library.add(fab, faDog, faCat, faDog, faDove, faHeart, faSearch, faAngleDown, faAngleUp) 
 
 class App extends React.Component{
   constructor(){

@@ -136,6 +136,7 @@ form button a{
 }
 button.favourites{
   padding: 0;
+  margin: 0 10px;
   background-color: rgba(255, 255, 255, 0);
   border: none;
   color: #fc751b;
@@ -144,17 +145,18 @@ button.favourites{
   &:hover{
     color:#fc751bc0 ;
   }
-  span{
-    color:  #fc751b;
-    &:hover{
-      color:#fc751bc0 ;
-    }
-  }
+  
+}
+.icon.favourites,
+.icon.angle
+{
+  color: #fc751b;
 }
 .pets.favourites{
   border-bottom: solid #9261de;
   .noFavs{
     color:rgba(128, 128, 128, 0.705);
+    width: 100%;
   }
 }
 p.searchResults{
