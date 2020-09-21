@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/shopifyInternChallenge/static/css/main.8d046e9a.chunk.css",
-    "main.js": "/shopifyInternChallenge/static/js/main.c0ced3d7.chunk.js",
-    "main.js.map": "/shopifyInternChallenge/static/js/main.c0ced3d7.chunk.js.map",
+    "main.css": "/shopifyInternChallenge/static/css/main.9b19d97c.chunk.css",
+    "main.js": "/shopifyInternChallenge/static/js/main.96cdf50d.chunk.js",
+    "main.js.map": "/shopifyInternChallenge/static/js/main.96cdf50d.chunk.js.map",
     "runtime-main.js": "/shopifyInternChallenge/static/js/runtime-main.99e28639.js",
     "runtime-main.js.map": "/shopifyInternChallenge/static/js/runtime-main.99e28639.js.map",
-    "static/js/2.6123b23b.chunk.js": "/shopifyInternChallenge/static/js/2.6123b23b.chunk.js",
-    "static/js/2.6123b23b.chunk.js.map": "/shopifyInternChallenge/static/js/2.6123b23b.chunk.js.map",
+    "static/js/2.b27f9a3d.chunk.js": "/shopifyInternChallenge/static/js/2.b27f9a3d.chunk.js",
+    "static/js/2.b27f9a3d.chunk.js.map": "/shopifyInternChallenge/static/js/2.b27f9a3d.chunk.js.map",
     "index.html": "/shopifyInternChallenge/index.html",
-    "precache-manifest.b162274e4d6a5055c84aabf0dd797ddb.js": "/shopifyInternChallenge/precache-manifest.b162274e4d6a5055c84aabf0dd797ddb.js",
+    "precache-manifest.7d69bae36dc086216763b8164549113b.js": "/shopifyInternChallenge/precache-manifest.7d69bae36dc086216763b8164549113b.js",
     "service-worker.js": "/shopifyInternChallenge/service-worker.js",
-    "static/css/main.8d046e9a.chunk.css.map": "/shopifyInternChallenge/static/css/main.8d046e9a.chunk.css.map",
-    "static/js/2.6123b23b.chunk.js.LICENSE.txt": "/shopifyInternChallenge/static/js/2.6123b23b.chunk.js.LICENSE.txt",
+    "static/css/main.9b19d97c.chunk.css.map": "/shopifyInternChallenge/static/css/main.9b19d97c.chunk.css.map",
+    "static/js/2.b27f9a3d.chunk.js.LICENSE.txt": "/shopifyInternChallenge/static/js/2.b27f9a3d.chunk.js.LICENSE.txt",
     "static/media/petLandingPage.png": "/shopifyInternChallenge/static/media/petLandingPage.ad797d35.png"
   },
   "entrypoints": [
     "static/js/runtime-main.99e28639.js",
-    "static/js/2.6123b23b.chunk.js",
-    "static/css/main.8d046e9a.chunk.css",
-    "static/js/main.c0ced3d7.chunk.js"
+    "static/js/2.b27f9a3d.chunk.js",
+    "static/css/main.9b19d97c.chunk.css",
+    "static/js/main.96cdf50d.chunk.js"
   ]
 }
