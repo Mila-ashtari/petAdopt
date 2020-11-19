@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/shopifyInternChallenge/static/css/main.9b19d97c.chunk.css",
-    "main.js": "/shopifyInternChallenge/static/js/main.96cdf50d.chunk.js",
-    "main.js.map": "/shopifyInternChallenge/static/js/main.96cdf50d.chunk.js.map",
-    "runtime-main.js": "/shopifyInternChallenge/static/js/runtime-main.99e28639.js",
-    "runtime-main.js.map": "/shopifyInternChallenge/static/js/runtime-main.99e28639.js.map",
-    "static/js/2.b27f9a3d.chunk.js": "/shopifyInternChallenge/static/js/2.b27f9a3d.chunk.js",
-    "static/js/2.b27f9a3d.chunk.js.map": "/shopifyInternChallenge/static/js/2.b27f9a3d.chunk.js.map",
-    "index.html": "/shopifyInternChallenge/index.html",
-    "precache-manifest.7d69bae36dc086216763b8164549113b.js": "/shopifyInternChallenge/precache-manifest.7d69bae36dc086216763b8164549113b.js",
-    "service-worker.js": "/shopifyInternChallenge/service-worker.js",
-    "static/css/main.9b19d97c.chunk.css.map": "/shopifyInternChallenge/static/css/main.9b19d97c.chunk.css.map",
-    "static/js/2.b27f9a3d.chunk.js.LICENSE.txt": "/shopifyInternChallenge/static/js/2.b27f9a3d.chunk.js.LICENSE.txt",
-    "static/media/petLandingPage.png": "/shopifyInternChallenge/static/media/petLandingPage.ad797d35.png"
+    "main.css": "/petAdopt/static/css/main.9990930d.chunk.css",
+    "main.js": "/petAdopt/static/js/main.5e7494ed.chunk.js",
+    "main.js.map": "/petAdopt/static/js/main.5e7494ed.chunk.js.map",
+    "runtime-main.js": "/petAdopt/static/js/runtime-main.8de5ae14.js",
+    "runtime-main.js.map": "/petAdopt/static/js/runtime-main.8de5ae14.js.map",
+    "static/js/2.37bcf770.chunk.js": "/petAdopt/static/js/2.37bcf770.chunk.js",
+    "static/js/2.37bcf770.chunk.js.map": "/petAdopt/static/js/2.37bcf770.chunk.js.map",
+    "index.html": "/petAdopt/index.html",
+    "precache-manifest.5df12487026de0c2479944d292640985.js": "/petAdopt/precache-manifest.5df12487026de0c2479944d292640985.js",
+    "service-worker.js": "/petAdopt/service-worker.js",
+    "static/css/main.9990930d.chunk.css.map": "/petAdopt/static/css/main.9990930d.chunk.css.map",
+    "static/js/2.37bcf770.chunk.js.LICENSE.txt": "/petAdopt/static/js/2.37bcf770.chunk.js.LICENSE.txt",
+    "static/media/petLandingPage.png": "/petAdopt/static/media/petLandingPage.ad797d35.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.99e28639.js",
-    "static/js/2.b27f9a3d.chunk.js",
-    "static/css/main.9b19d97c.chunk.css",
-    "static/js/main.96cdf50d.chunk.js"
+    "static/js/runtime-main.8de5ae14.js",
+    "static/js/2.37bcf770.chunk.js",
+    "static/css/main.9990930d.chunk.css",
+    "static/js/main.5e7494ed.chunk.js"
   ]
 }
