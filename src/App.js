@@ -1,14 +1,15 @@
 import React, { Fragment } from 'react';
-import './App.scss';
-import UserSelection from './components/UserSelection'
-import Pets from './components/Pets'
-import FavPets from './components/FavPets'
-import petLandingPage from './assets/petLandingPage.png'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faDog, faCat, faDove, faHeart ,faSearch,faAngleDown, faAngleUp} from '@fortawesome/free-solid-svg-icons'
 import firebase from './firebase';
 import { Link } from "react-scroll";
+
+import './App.scss';
+import UserSelection from './components/UserSelection'
+import Pets from './components/Pets'
+import FavPets from './components/FavPets'
+import petLandingPage from './assets/petLandingPage.png'
  
 library.add(fab, faDog, faCat, faDog, faDove, faHeart, faSearch, faAngleDown, faAngleUp) 
 
@@ -126,14 +127,25 @@ class App extends React.Component{
                         smooth={true}
                         offset={-70}
                         duration={500}
-                    >meet your <br></br>forever friend now!</Link>
+                    >meet your <br>
+                    </br>forever friend now!
+                    </Link>
             </button>
           </div>
         </header>
         <main className="wrapper">
-          <UserSelection submitForm={this.handleSubmit}></UserSelection>
-          <FavPets favPetList={this.state.favPetList} clickCrossButton={this.handleFavPetsClick}></FavPets>
-          <Pets petList={this.state.petList} favPetList={this.state.favPetList} clickFavButton={this.handlePetsClick}></Pets>
+          <UserSelection 
+          submitForm={this.handleSubmit}>
+          </UserSelection>
+          <FavPets
+           favPetList={this.state.favPetList} 
+           clickCrossButton={this.handleFavPetsClick}>
+           </FavPets>
+          <Pets
+           petList={this.state.petList}
+           favPetList={this.state.favPetList}
+           clickFavButton={this.handlePetsClick}>
+          </Pets>
         </main>
       </Fragment>
    )
