@@ -22,10 +22,29 @@ export class FavPetStore extends Component{
           this.setState({favPetList:newFavPetList})
         })
     }
+    addFavPet=({petAge, petId, petName, petPhoto, petStatus, petUrl})=>{
+        const dbRef = firebase.database().ref();
+        dbRef.push({
+         petName,
+         petAge,
+         petUrl,
+         petStatus,
+         petPhoto,
+         petId
+      })
+    }
+    removeFavPet=(key)=>{
+        const dbRef = firebase.database().ref();
+        dbRef.child(key).remove();
+    }
     render(){
         return(
             <Context.Provider
-                value={{...this.state}}
+                value={{
+                    ...this.state, 
+                    addFavPet:this.addFavPet,
+                    removeFavPet:this.removeFavPet
+                }}
             >
                 {this.props.children}
             </Context.Provider>

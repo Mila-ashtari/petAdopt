@@ -74,22 +74,7 @@ class App extends React.Component{
     }
     this.getPet(selectionObj)
   }
-  handlePetsClick=({petAge, petId, petName, petPhoto, petStatus, petUrl})=>{
-        const dbRef = firebase.database().ref();
-        dbRef.push({
-         petName,
-         petAge,
-         petUrl,
-         petStatus,
-         petPhoto,
-         petId
-      })
-  }
-  handleFavPetsClick=({key})=>{
-    const dbRef = firebase.database().ref();
-    dbRef.child(key).remove();
-  }
-
+  
  render(){
 
    return(
@@ -115,17 +100,9 @@ class App extends React.Component{
               </div>
             </header>
             <main className="wrapper">
-              <UserSelection 
-                  submitForm={this.handleSubmit}>
-              </UserSelection>
-              <FavPets
-                  clickCrossButton={this.handleFavPetsClick}>
-              </FavPets>
-              <Pets
-                  petList={this.state.petList}
-                  favPetList={this.state.favPetList}
-                  clickFavButton={this.handlePetsClick}>
-              </Pets>
+              <UserSelection submitForm={this.handleSubmit}/>
+              <FavPets/>
+              <Pets petList={this.state.petList}/>
             </main>
           </FavPetStore>
         </Fragment>

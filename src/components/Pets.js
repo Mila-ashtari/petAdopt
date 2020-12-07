@@ -4,13 +4,14 @@ import { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import FavPetContext from '../contexts/FavPetContext'
+// import PetContainer from './PetContainer';
 
 
 
 class Pets extends Component {
     static contextType= FavPetContext
-    handleClick=(pet)=>{
-        this.props.clickFavButton(pet)  
+    handleAddFavPet=(pet)=>{
+        this.context.addFavPet(pet)  
     }
     handleDisable=(petId)=>{
         let disable=false
@@ -31,37 +32,33 @@ class Pets extends Component {
         return color
     }
     render(){
-        console.log(this.props.petList)
         return(
-        <Fragment>
-            {this.props.petList.length!==0 ? <p  className="searchResults"><FontAwesomeIcon className='icon' icon='search'></FontAwesomeIcon> Search Results</p> : <p></p>}
-            <section className="pets searchResults" id="searchResults">
-            {this.props.petList.map((pet)=>{
-                return(
-                    <div key={pet.key} className="petContainer">
-                        <img src={pet.petPhoto} alt=""/>
-                        <div className="petInfo">
-                            <p className="name" style={{ fontFamily: 'Indie Flower' }}><span>Name: </span>{pet.petName}</p>
-                            <p className="age" style={{ fontFamily: 'Indie Flower' }}><span>Age: </span>{pet.petAge}</p>
-                            <p className="status" style={{ fontFamily: 'Indie Flower' }}><span>Status: </span>{pet.petStatus}</p>
-                            <p><a href={pet.petUrl} style={{ fontFamily: 'Indie Flower' }} target="_blank">more info</a></p>
-                        </div>
-                        <button 
-                            type='button' 
-                            className='favButton'  
-                            onClick={()=>{this.handleClick(pet)}} 
-                            style={this.handleColor(pet.petId)} 
-                            disabled={this.handleDisable(pet.petId)}
-                            >
-                                &#9829;
+            <Fragment>
+                {this.props.petList.length!==0 && <p  className="searchResults"><FontAwesomeIcon className='icon' icon='search'></FontAwesomeIcon> Search Results</p>}
+                <section className="pets searchResults" id="searchResults">
+                {this.props.petList.map((pet) =>{
+                    return(
+                        <div key={pet.petId} className="petContainer">
+                            <img src={pet.petPhoto} alt=""/>
+                            <div className="petInfo">
+                                <p className="name"><span>Name: </span>{pet.petName}</p>
+                                <p className="age" ><span>Age: </span>{pet.petAge}</p>
+                                <p className="status"><span>Status: </span>{pet.petStatus}</p>
+                                <p><a href={pet.petUrl} target="_blank">more info</a></p>
+                            </div>
+                            <button 
+                                type='button' 
+                                className='favButton'  
+                                onClick={()=>{this.handleAddFavPet(pet)}} 
+                                style={this.handleColor(pet.petId)} 
+                                disabled={this.handleDisable(pet.petId)}
+                                >
+                                    &#9829;
                             </button>  
-                    </div>
-                )
-            })
-            }      
-            </section>       
-        </Fragment>
-             
+                        </div>)
+                })}  
+                </section>       
+            </Fragment>
         )}
 }
 

@@ -36,22 +36,35 @@ class FavPetList extends Component{
                 {this.state.showFavourites && 
                     <section className="pets favourites">
                         {this.context.favPetList.length!==0 
-                        ? this.context.favPetList.map(({key, petData})=>{ 
+                        ? 
+                        this.context.favPetList.map(({key, petData})=>{ 
                             return(
                             <div key={key} className="petContainer">
-                                <button className="cross" data-key={key} data-pet-name={petData.petName} data-pet-url={petData.petUrl} data-pet-age={petData.petAge} data-pet-status={petData.petStatus} data-pet-photo={petData.petPhoto}  data-pet-id={petData.petId} onClick={(e)=>{this.props.clickCrossButton(e.target.dataset)}}>&#9747;</button>
+                                <button 
+                                    className="cross"  
+                                    onClick={()=>{this.context.removeFavPet(key)}}
+                                    >
+                                        &#9747;
+                                </button>
                                 <img src={petData.petPhoto} alt=""/>
                                 <div className="petInfo">
-                                    <p className="name" style={{ fontFamily: 'Indie Flower' }}><span>Name: </span>{petData.petName}</p>
-                                    <p className="age" style={{ fontFamily: 'Indie Flower' }}><span>Age: </span>{petData.petAge}</p>
-                                    <p className="status" style={{ fontFamily: 'Indie Flower' }}><span>Status: </span>{petData.petStatus}</p>
-                                    <p><a href={petData.petUrl} style={{ fontFamily: 'Indie Flower' }} target="_blank">more info</a></p>
+                                    <p className="name"><span>Name: </span>{petData.petName}</p>
+                                    <p className="age"><span>Age: </span>{petData.petAge}</p>
+                                    <p className="status"><span>Status: </span>{petData.petStatus}</p>
+                                    <p><a href={petData.petUrl}  target="_blank">more info</a></p>
                                 </div>
-                                <button type="button" className="favButton" style={{color:'red'}}>&#9829;</button>
+                                <button 
+                                    type="button" 
+                                    className="favButton" 
+                                    style={{color:'red'}}
+                                    >
+                                        &#9829;
+                                </button>
                             </div>
                             )
-                    })
-                    :<p className='noFavs'>you have no favourites</p>}              
+                            })
+                            :
+                            <p className='noFavs'>you have no favourites</p>}              
                     </section>
                 }
             </section>
